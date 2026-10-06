@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+**/data/
+**/backups/
+*.sqlite*
+*.log
+node_modules/
+*.zip
+*.png

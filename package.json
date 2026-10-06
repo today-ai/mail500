@@ -1,0 +1,13 @@
+{
+  "name": "dispatch-marketing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node --env-file-if-exists=dispatch/.env dispatch/server.mjs",
+    "test": "node --test dispatch/test.mjs",
+    "build": "node --check dispatch/server.mjs && node --check dispatch/production.js",
+    "backup": "cd dispatch && node --env-file-if-exists=.env backup.mjs"
+  }
+}
