@@ -33,7 +33,7 @@ Set these values through the hosting environment panel, never in GitHub:
 
 Run exactly one application instance. Before adding real contacts, confirm that the database path survives restarts and redeployments. Do not use an ephemeral checkout for SQLite. Configure backups outside the deployment directory. If Hostinger does not offer suitable persistent storage, the database integration must be changed before live use.
 
-The current app sends using the Resend HTTPS API. The requested Resend MCP transport remains to be implemented and verified; the Codex connector's authentication is separate from deployed application credentials.
+The current batch worker still sends using the Resend HTTPS API. A server-side remote MCP client now supports authenticated quota checks and unsent broadcast drafts, with JSON/SSE responses and no automatic mutation retries. The authenticated GET /api/mcp/readiness endpoint checks the MCP connection. Marketing sends through MCP must use broadcasts: segment synchronization, persisted broadcast IDs, send reconciliation and webhook mapping remain to be integrated before enabling this route for live batches. The Codex connector's authentication is separate from deployed application credentials.
 
 ## First batch
 
